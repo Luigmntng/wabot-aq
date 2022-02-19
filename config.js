@@ -94,6 +94,6 @@ global.wait = 'Tunggu Sebentar'
 bc = 'CecakBotz'
 titler = 'Maszz Lui'
 body = run
-kasihcaption = `©${ahmdlui}\n\n©${Luigmntng}`
+kasihcaption = `©${namaig}\n\n©${namagithub}`
 gambar1 = tum1
 gambar2 = tum2

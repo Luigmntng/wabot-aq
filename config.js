@@ -79,13 +79,13 @@ fs.watchFile(file, () => {
 })
 
 // Tambahan By Me (RyuuZeyy)
-gc1 = 'https://chat.whatsapp.com/FJkbQjpewltErmQRwzC9rj'
-gc2 = 'https://chat.whatsapp.com/HTcmEqjQeu1GMN2xN210QJ'
-gc3 = 'https://chat.whatsapp.com/I3yAMaBNA9X63FspQ5V46N'
-namaig = 'https://instagram.com/bah.raid'
+gc1 = 'https://chat.whatsapp.com/DdMbKYRxn5TCFrB9m10XnQ'
+gc2 = 'https://chat.whatsapp.com/DdMbKYRxn5TCFrB9m10XnQ'
+gc3 = 'https://chat.whatsapp.com/DdMbKYRxn5TCFrB9m10XnQ'
+namaig = 'https://instagram.com/ahmdlui'
 linkf = gc1
 linkff = namaig
-namabot = 'ChokiBot'
+namabot = 'Cecakbotz'
 namagithub = 'https://github.com/RTeam1'
 gcid = '972502255007-1406453544'
 footer = 'CecakBotz'
@@ -94,6 +94,6 @@ global.wait = 'Tunggu Sebentar'
 bc = 'CecakBotz'
 titler = 'Maszz Lui'
 body = run
-kasihcaption = `©${namaig}\n\n©${namagithub}`
+kasihcaption = `©${ahmdlui}\n\n©${Luigmntng}`
 gambar1 = tum1
 gambar2 = tum2

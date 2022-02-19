@@ -64,7 +64,7 @@ fs.watchFile(file_exif, () => {
   require('./lib/exif.json')
 })
 
-global.packname = Cecakbotz
+global.packname = sticker_packname
 global.author = sticker_author
 
 

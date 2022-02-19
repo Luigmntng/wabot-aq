@@ -20,7 +20,7 @@ runtime = process.uptime()
 teks = `${kyun(runtime)}`
 run = `${kyun(runtime)}`
 
-global.owner = ['7922416516']// Put your number here
+global.owner = ['6282146092695']// Put your number here
 
 global.mods = [] // Want some help?
 global.prems = [] // Premium user has unlimited limit
@@ -49,10 +49,10 @@ const stickerpack = JSON.parse(spack)
 if (stickerpack.spackname == '') {
 // var sticker_name = 'I hope you\'re fine'
 //var sticker_author = 'Nurutomo'
-var sticker_name = 'X - RyuuZeyy' // ganti aja
+var sticker_name = 'eL - MaszLuiy' // ganti aja
 var sticker_author = '' // ganti aja
 } else {
-  var sticker_name = stickerpack.spackname
+  var sticker_name = stickerpack.Cecakbotz
   var sticker_author = stickerpack.sauthor
 }
 
@@ -64,7 +64,7 @@ fs.watchFile(file_exif, () => {
   require('./lib/exif.json')
 })
 
-global.packname = sticker_name
+global.packname = Cecakbotz
 global.author = sticker_author
 
 
@@ -88,11 +88,11 @@ linkff = namaig
 namabot = 'ChokiBot'
 namagithub = 'https://github.com/RTeam1'
 gcid = '972502255007-1406453544'
-footer = 'ChokiBot'
+footer = 'CecakBotz'
 lolkey = 'rey2k21'
 global.wait = 'Tunggu Sebentar'
-bc = 'Choki'
-titler = '𝙍𝙚𝙖𝙡 𝙁𝙖𝙢𝙨 𝙆𝙞𝙡𝙡𝙚𝙧'
+bc = 'CecakBotz'
+titler = 'Maszz Lui'
 body = run
 kasihcaption = `©${namaig}\n\n©${namagithub}`
 gambar1 = tum1

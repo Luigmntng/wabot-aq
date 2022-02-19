@@ -23,6 +23,7 @@ let tags = {
   'downloader': 'Downloader',
   'tools': 'Tools',
   'fun': 'Fun',
+  'dosa': 'Nsfw Menu
   'database': 'Database',
   'vote': 'Voting',
   'absen': 'Absen',

@@ -19,6 +19,7 @@ let tags = {
   'internet': 'Internet',
   'anonymous': 'Anonymous Chat',
   'nulis': 'MagerNulis & Logo',
+  'wall': 'Random Wallpaper',
   'downloader': 'Downloader',
   'tools': 'Tools',
   'fun': 'Fun',
@@ -60,17 +61,17 @@ const defaultMenu = {
 │
 │ Uptime : *%uptime (%muptime)*
 │ Database : %rtotalreg of %totalreg
-│ Github :
+│ Sc Bot :
 │ %github
 │
 │
-│ Group 1 :
-│ ${gc1}
+│ My github:
+│ github.com/Luigmntng
 │
-│ Group 2 :
-│ ${gc2}
+│ Instagram:
+│ instagram.com/ahmdlui
 │
-│ Group 3 :
+│ Group  :
 │ ${gc3}
 │
 │

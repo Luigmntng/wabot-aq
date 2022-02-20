@@ -1,7 +1,7 @@
 let fetch = require('node-fetch')
 let handler = async (m, { conn, command, usedPrefix }) => {
 	
-	conn.sendButtonImg(m.chat, await ( await fetch(`https://restapi-production-a62b.up.railway.app/api/wallpaper/satanic?apikey=APIKEY`)).buffer(), 'Nih kak', footer, 'Bg Lu ateis ?', `.estetikwallpaper`, m)
+	conn.sendButtonImg(m.chat, await ( await fetch(`https://restapi-production-a62b.up.railway.app/api/wallpaper/satanic?apikey=APIKEY`)).buffer(), 'Bg Lu ateis?', footer, 'Iya bg gw ateis', `.sakatonicwallpaper`, m)
 
 }
 

@@ -7,33 +7,33 @@ let wib = moment.tz('Asia/Jakarta').format('HH:mm:ss')
 let wita = moment.tz('Asia/Makassar').format('HH:mm:ss')
 let wit = moment.tz('Asia/Jayapura').format('HH:mm:ss')
 let tags = {
-  'main': 'Main',
-  'game': 'Game',
-  'xp': 'Exp & Limit',
-  'sticker': 'Sticker',
-  'kerang': 'Kerang Ajaib',
-  'quotes': 'Quotes',
-  'admin': 'Admin',
-  'group': 'Group',
-  'premium': 'Premium',
-  'internet': 'Internet',
-  'anonymous': 'Anonymous Chat',
-  'nulis': 'MagerNulis & Logo',
-  'wall': 'Random Wallpaper',
-  'downloader': 'Downloader',
-  'tools': 'Tools',
-  'fun': 'Fun',
-  'dosa': 'Nsfw Menu',
-  'database': 'Database',
-  'vote': 'Voting',
-  'absen': 'Absen',
-  'quran': 'Al Qur\'an',
-  'jadibot': 'Jadi Bot',
-  'owner': 'Owner',
-  'host': 'Host',
-  'advanced': 'Advanced',
-  'info': 'Info',
-  '': 'No Category',
+  'main': '𝑴𝒂𝒊𝒏',
+  'game': '𝑮𝒂𝒎𝒆',
+  'xp': '𝑬𝒙𝒑 & 𝑳𝒊𝒎𝒊𝒕',
+  'sticker': '𝑺𝒕𝒊𝒄𝒌𝒆𝒓',
+  'kerang': '𝑲𝒆𝒓𝒂𝒏𝒈 𝑨𝒋𝒂𝒊𝒃',
+  'quotes': '𝑸𝒖𝒐𝒕𝒆𝒔',
+  'admin': '𝑨𝒅𝒎𝒊𝒏',
+  'group': '𝑮𝒓𝒐𝒖𝒑',
+  'premium': '𝑷𝒓𝒆𝒎𝒊𝒖𝒎',
+  'internet': '𝑰𝒏𝒕𝒆𝒓𝒏𝒆𝒕',
+  'anonymous': '𝑨𝒏𝒐𝒏𝒚𝒎𝒐𝒖𝒔 𝑪𝒉𝒂𝒕',
+  'nulis': '𝑴𝒂𝒈𝒆𝒓𝑵𝒖𝒍𝒊𝒔 & 𝑳𝒐𝒈𝒐',
+  'wall': '𝑹𝒂𝒏𝒅𝒐𝒎 𝑾𝒂𝒍𝒍𝒑𝒂𝒑𝒆𝒓',
+  'downloader': '𝑫𝒐𝒘𝒏𝒍𝒐𝒂𝒅𝒆𝒓',
+  'tools': '𝑻𝒐𝒐𝒍𝒔',
+  'fun': '𝑭𝒖𝒏',
+  'dosa': '𝑵𝒔𝒇𝒘 𝑴𝒆𝒏𝒖',
+  'database': '𝑫𝒂𝒕𝒂𝒃𝒂𝒔𝒆',
+  'vote': '𝑽𝒐𝒕𝒊𝒏𝒈',
+  'absen': '𝑨𝒃𝒔𝒆𝒏',
+  'quran': '𝑨𝒍 𝑸𝒖𝒓\'𝒂𝒏',
+  'jadibot': '𝑱𝒂𝒅𝒊 𝑩𝒐𝒕',
+  'owner': '𝑶𝒘𝒏𝒆𝒓',
+  'host': '𝑯𝒐𝒔𝒕',
+  'advanced': '𝑨𝒅𝒗𝒂𝒏𝒄𝒆𝒅',
+  'info': '𝑰𝒏𝒇𝒐',
+  '': '𝑵𝒐 𝑪𝒂𝒕𝒆𝒈𝒐𝒓𝒚',
 }
 
 const defaultMenu = {
@@ -41,45 +41,45 @@ const defaultMenu = {
 ╭─「 ${namabot} 」
 │ 
 │
-│ Hai %tagsender
+│ 𝓗𝓪𝓲 %tagsender
 │ ${ucapan()}
 │
-│ Tersisa *%limit Limit*
-│ Role *%role*
-│ Level *%level (%exp / %maxexp)* [%xp4levelup lagi untuk levelup]
+│ 𝓣𝓮𝓻𝓼𝓲𝓼𝓪 *%limit Limit*
+│ 𝓡𝓸𝓵𝓮 *%role*
+│ 𝓛𝓮𝓿𝓮𝓵 *%level (%exp / %maxexp)* [%xp4levelup lagi untuk levelup]
 │ %totalexp XP in Total
 │ 
-│ Hari : *%week %weton*
-│ Tanggal : *%date*
-│ Tanggal Islam : 
+│ 𝓗𝓪𝓻𝓲 : *%week %weton*
+│ 𝓣𝓪𝓷𝓰𝓰𝓪𝓵 : *%date*
+│ 𝓣𝓪𝓷𝓰𝓰𝓪𝓵 𝓲𝓼𝓵𝓪𝓶 : 
 │ *%dateIslamic*
-│ Jam Terminal : *%time* 
+│ 𝓙𝓪𝓶 𝓽𝓮𝓻𝓶𝓲𝓷𝓪𝓵 : *%time* 
 │
-│ Jam Indonesia :
+│ 𝓙𝓪𝓶 𝓘𝓷𝓭𝓸𝓷𝓮𝓼𝓲𝓪 :
 │ ${wib} WIB
 │ ${wita} WITA
 │ ${wit} WIT
 │
-│ Uptime : *%uptime (%muptime)*
-│ Database : %rtotalreg of %totalreg
-│ Sc Bot :
+│ 𝓤𝓹𝓽𝓲𝓶𝓮 : *%uptime (%muptime)*
+│ 𝓓𝓪𝓽𝓪𝓫𝓪𝓼𝓮 : %rtotalreg of %totalreg
+│ 𝓢𝓬 𝓑𝓸𝓽 :
 │ %github
 │
 │
-│ My github:
+│ Ｍｙ ｇｉｔｈｕｂ:
 │ github.com/Luigmntng
 │
-│ Instagram:
+│ Ｉｎｓｔａｇｒａｍ:
 │ instagram.com/ahmdlui
 │
-│ Group  :
+│ Ｇｒｏｕｐ :
 │ ${gc3}
 │
 │
 ╰────
 `.trimStart(),
   header: '╭─「 %category 」',
-  body: '│ • %cmd %islimit %isPremium',
+  body: '| • %cmd %islimit %isPremium',
   footer: '╰────\n',
   after: `
 *%npmname@^%version*
@@ -222,16 +222,16 @@ function ucapan() {
     const time = moment.tz('Asia/Jakarta').format('HH')
     res = "Selamat dinihari"
     if (time >= 4) {
-        res = "Selamat pagi 🌄🌤️"
+        res = "Sugeng Enjing 🌄🌤️"
     }
     if (time > 10) {
-        res = "Selamat siang🌞💫"
+        res = "Beduk🌞💫"
     }
     if (time >= 15) {
-        res = "Selamat sore🌝✨"
+        res = "Sugeng Sonten🌝✨"
     }
     if (time >= 18) {
-        res = "Selamat malam🌃🌚"
+        res = "Wengi🌃🌚"
     }
     return res
 }

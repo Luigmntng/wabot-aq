@@ -17,9 +17,3 @@ handler.help = [ 'yotsuba', 'shinomiya', 'yumeko', 'tejina', 'chiho', 'boruto', 
 handler.tags = ['wibu']
 handler.command = /^(yotsuba|shinomiya|yumeko|tejina|chiho|boruto|kaori|shizuka|kaga|kotori|mikasa|akiyama|gremory|isuzu|shina|kagura|shinka|eba|elaina|erza|hinata|minato|naruto|sagiri|nezuko|rize|anna|deidara|yuki|anna|asuna|ayuzawa|chitoge|emilia|hestia|inori|itachi|madara|sakura|sasuke|tsunade|onepiece)$/i
 module.exports = handler
-
-
-
-
-
-/^(yotsuba|shinomiya|yumeko|tejina|chiho|boruto|kaori|shizuka|kaga|kotori|mikasa|akiyama|gremory|isuzu|shina|kagura|shinka|eba|elaina|erza|hinata|minato|naruto|sagiri|nezuko|rize|anna|deidara|yuki|anna|asuna|ayuzawa|chitoge|emilia|hestia|inori|itachi|madara|sakura|sasuke|tsunade|onepiece)$/i

@@ -334,21 +334,32 @@ this.updatePresence(m.chat, Presence.recording)
     switch (action) {
       case 'add':
       case 'remove':
-        if (chat.welcome) {
+         if (chat.welcome) {
           let groupMetadata = await this.groupMetadata(jid)
           for (let user of participants) {
+            if (user.includes(this.user.jid)) return // biar ngga nyambut diri sendiri, kalo simulasi harus tag yang lain
             let pp = './src/avatar_contact.png'
             try {
               pp = await this.getProfilePicture(user)
             } catch (e) {
             } finally {
-              text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!').replace('@subject', this.getName(jid)).replace('@desc', groupMetadata.desc) :
-                (chat.sBye || this.bye || conn.bye || 'Bye, @user!')).replace('@user', '@' + user.split('@')[0])
-              this.sendFile(jid, pp, 'pp.jpg', text, null, false, {
-                contextInfo: {
-                  mentionedJid: [user]
-                }
+              text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'BEBAN BERTAMBAH, @user!').replace('@subject', this.getName(jid)).replace('@desc', groupMetadata.desc ? String.fromCharCode(8206).repeat(4001) + groupMetadata.desc : '') :
+                (chat.sBye || this.bye || conn.bye || 'BEBAN BERKURANG, @user!')).replace(/@user/g, '@' + user.split('@')[0])
+              let wel = API('hardianto', '/api/welcome3', {
+                profile: pp,
+                name: this.getName(user),
+                bg: 'https://telegra.ph/file/04e443fbac9d2393f36e0.jpg',
+                namegb: this.getName(jid),
+                member: groupMetadata.participants.length
               })
+              let lea = API('hardianto', '/api/goodbye3', {
+                profile: pp,
+                name: this.getName(user),
+                bg: 'https://telegra.ph/file/04e443fbac9d2393f36e0.jpg',
+                namegb: this.getName(jid),
+                member: groupMetadata.participants.length
+              })
+              await this.sendButtonLoc(jid, action === 'add' ? wel : lea, text, 'CecakBotz', action === 'add' ? 'Out aja Lu Beban' : 'Alhamdulliah beban berkurang', 'tes')
             }
           }
         }

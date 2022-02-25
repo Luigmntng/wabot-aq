@@ -37,7 +37,7 @@ this.updatePresence(m.chat, Presence.recording)
             if (!isNumber(user.level)) user.level = 0
             if (!isNumber(user.exp)) user.exp = 0
             if (!isNumber(user.title)) user.title = ''
-            if (!isNumber(user.limit)) user.limit = 6
+            if (!isNumber(user.limit)) user.limit = 5
             if (!isNumber(user.lastclaim)) user.lastclaim = 0
             if (!isNumber(user.money)) user.money = 0
             
@@ -50,9 +50,9 @@ this.updatePresence(m.chat, Presence.recording)
             if (!isNumber(user.legendary)) user.legendary = 0
             if (!isNumber(user.pet)) user.pet = 0
         
-            if (!isNumber(user.Jamu)) user.Jamu = 0
+            if (!isNumber(user.jamu)) user.jamu = 0
             if (!isNumber(user.sampah)) user.sampah = 0
-            if (!isNumber(user.Bajubatik)) user.Bajubatik = 0
+            if (!isNumber(user.bajubatik)) user.bajubatik = 0
             
             if (!isNumber(user.kucing)) user.kucing = 0
             if (!isNumber(user.kucinglastclaim)) user.kucinglastclaim = 0
@@ -123,7 +123,7 @@ this.updatePresence(m.chat, Presence.recording)
             level: 0,
             title: '',
             exp: 0,
-            limit: 50,
+            limit: 5,
             lastclaim: 0,
             money: 0,
             diamond: 0,
@@ -133,9 +133,9 @@ this.updatePresence(m.chat, Presence.recording)
             mythic: 0,
             legendary: 0,
             pet: 0,
-            Jamu: 0,
+            jamu: 0,
             sampah: 0,
-            Bajubatik: 0,
+            bajubatik: 0,
             kucing: 0,
             as: 0,
             paus: 0,

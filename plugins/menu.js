@@ -9,7 +9,7 @@ let wit = moment.tz('Asia/Jayapura').format('HH:mm:ss')
 let tags = {
   'main': '𝑴𝒂𝒊𝒏',
   'game': '𝑮𝒂𝒎𝒆',
-  'rpg': '𝑹𝒑𝒈',
+  'rpg': '𝑹𝒑𝒈[percobaan]',
   'xp': '𝑬𝒙𝒑 & 𝑳𝒊𝒎𝒊𝒕',
   'sticker': '𝑺𝒕𝒊𝒄𝒌𝒆𝒓',
   'kerang': '𝑲𝒆𝒓𝒂𝒏𝒈 𝑨𝒋𝒂𝒊𝒃',
@@ -195,6 +195,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
 handler.help = ['menu', 'help', '?']
 handler.tags = ['main']
 handler.command = /^(menu|help|\?)$/i
+handler.register = true
 handler.owner = false
 handler.mods = false
 handler.premium = false

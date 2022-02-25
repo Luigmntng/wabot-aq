@@ -1,11 +1,8 @@
 let fs = require('fs')
 let path = require('path')
-let moment = require('moment-timezone')
+let fetch = require('node-fetch')
 let levelling = require('../lib/levelling')
-//const time = moment.tz('Asia/Jakarta').format('HH:mm:ss')
-let wib = moment.tz('Asia/Jakarta').format('HH:mm:ss')
-let wita = moment.tz('Asia/Makassar').format('HH:mm:ss')
-let wit = moment.tz('Asia/Jayapura').format('HH:mm:ss')
+const thumb = fs.readFileSync('./gambar1.jpeg')
 let tags = {
   'main': '𝑴𝒂𝒊𝒏',
   'game': '𝑮𝒂𝒎𝒆',
@@ -37,52 +34,38 @@ let tags = {
   'info': '𝑰𝒏𝒇𝒐',
   '': '𝑵𝒐 𝑪𝒂𝒕𝒆𝒈𝒐𝒓𝒚',
 }
-
 const defaultMenu = {
   before: `
-╭─「 ${namabot} 」
-│ 
-│
-│ 𝓗𝓪𝓲 %tagsender
-│ ${ucapan()}
-│
-│ 𝓣𝓮𝓻𝓼𝓲𝓼𝓪 *%limit Limit*
-│ 𝓡𝓸𝓵𝓮 *%role*
-│ 𝓛𝓮𝓿𝓮𝓵 *%level (%exp / %maxexp)* [%xp4levelup lagi untuk levelup]
-│ %totalexp XP in Total
-│ 
-│ 𝓗𝓪𝓻𝓲 : *%week %weton*
-│ 𝓣𝓪𝓷𝓰𝓰𝓪𝓵 : *%date*
-│ 𝓣𝓪𝓷𝓰𝓰𝓪𝓵 𝓲𝓼𝓵𝓪𝓶 : 
-│ *%dateIslamic*
-│ 𝓙𝓪𝓶 𝓽𝓮𝓻𝓶𝓲𝓷𝓪𝓵 : *%time* 
-│
-│ 𝓙𝓪𝓶 𝓘𝓷𝓭𝓸𝓷𝓮𝓼𝓲𝓪 :
-│ ${wib} WIB
-│ ${wita} WITA
-│ ${wit} WIT
-│
-│ 𝓤𝓹𝓽𝓲𝓶𝓮 : *%uptime (%muptime)*
-│ 𝓓𝓪𝓽𝓪𝓫𝓪𝓼𝓮 : %rtotalreg of %totalreg
-│ 𝓢𝓬 𝓑𝓸𝓽 :
-│ %github
-│
-│
-│ Ｍｙ ｇｉｔｈｕｂ:
-│ github.com/Luigmntng
-│
-│ Ｉｎｓｔａｇｒａｍ:
-│ instagram.com/ahmdlui
-│
-│ Ｇｒｏｕｐ :
-│ ${gc3}
-│
-│
-╰────
-`.trimStart(),
-  header: '╭─「 %category 」',
-  body: '| • %cmd %islimit %isPremium',
-  footer: '╰────\n',
+┏━━⬣ꕥ %me ꕥ━━━━
+┃⬡📊 *Version*: %version
+┃⬡🗃️ *Lib*: Baileys-MD
+┃⬡🧪 *Mode:* ${global.opts['self'] ? 'Self' : 'publik'}
+┃⬡⏰ *Uptime:* %uptime
+┗⬣
+┏━━⬣ 𝙄𝙉𝙁𝙊 𝙐𝙎𝙀𝙍
+┃⬡ 📇 *Name*:  %name 
+┃⬡ 🆔 *Status*: ---
+┃⬡ 🎫 *Limit*: %limit
+┃⬡ 💹 *Money*: %money
+┃⬡ ✨ *Exp*: %totalexp
+┃⬡ 📊 *Level*: %level
+┃⬡ 📍 *Role*: %role
+┃⬡ 💲Premium : ${global.prem ? '✅' : '❌'}
+┗⬣
+┏━━⬣ 𝙄𝙉𝙁𝙊 𝙎𝙏𝘼𝙏𝙐𝙎
+
+┃⬡ _*SC Ori = github.com/Rteam1/wabot-aq*_
+
+┗⬣
+╭─❑ 「 INFORMASI 」 ❑──
+┃⬡ github : github.com/luigmntng
+┃⬡ instagram : instagram.com/ahmdlui
+┃⬡ jika ada yg eror alhamdulillah
+┗⬣
+%readmore`.trimStart(),
+  header: '┏┉┄┈┈┈『%category』┈┈┈┈┈┉┓',
+  body: '┆➜ %cmd %islimit %isPremium',
+  footer: '└┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈\n',
   after: `
 *%npmname@^%version*
 ${'```%npmdesc```'}
@@ -94,8 +77,6 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
     let { exp, limit, level, role } = global.db.data.users[m.sender]
     let { min, xp, max } = levelling.xpRange(level, global.multiplier)
     let name = conn.getName(m.sender)
-    let tagsender = `@${m.sender.split`@`[0]}`
-
     let d = new Date(new Date + 3600000)
     let locale = 'id'
     // d.getTimeZoneOffset()
@@ -115,9 +96,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
       year: 'numeric'
     }).format(d)
     let time = d.toLocaleTimeString(locale, {
-      hour: 'numeric',
-      minute: 'numeric',
-      second: 'numeric'
+      hour12: false
     })
     let _uptime = process.uptime() * 1000
     let _muptime
@@ -182,11 +161,29 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
       totalexp: exp,
       xp4levelup: max - exp,
       github: package.homepage ? package.homepage.url || package.homepage : '[unknown github url]',
-      level, limit, name, tagsender, weton, week, date, dateIslamic, time, totalreg, rtotalreg, role,
+      level, limit, name, weton, week, date, dateIslamic, time, totalreg, rtotalreg, role,
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    conn.reply(m.chat, text.trim(), m)
+    //Iya bang sy nub
+    const reply = {
+    key: {
+        participant: '0@s.whatsapp.net'
+    },
+    message: {
+        orderMessage: {
+            itemCount: 1122334455,
+            itemCoun: 404,
+            surface: 404,
+            message: `© ${conn.user.name}`,
+            orderTitle: 'B',
+            thumbnail: thumb,
+            sellerJid: '0@s.whatsapp.net'
+        }
+    }
+}
+let fkon = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: '6282146092695@s.whatsapp.net' } : {}) }, message: { contactMessage: { displayName: `Relldev`, vcard: `BEGIN:VCARD\nVERSION:3.0\nN:;a,;;;\nFN: Rlxfly UwU\nitem1.TEL;waid=6282146092695:6282146092695\nitem1.X-ABLabel:Ponsel\nEND:VCARD`}}}
+conn.send3ButtonImg(m.chat, thumb, `Hi! Beban Im ${conn.user.name}\n\nHere my menu...`, text.trim(), 'ping', '.ping', 'owner', '-owner', 'donasi', '.donasi', reply)
   } catch (e) {
     conn.reply(m.chat, 'Maaf, menu sedang error', m)
     throw e
@@ -195,10 +192,10 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
 handler.help = ['menu', 'help', '?']
 handler.tags = ['main']
 handler.command = /^(menu|help|\?)$/i
-handler.register = true
 handler.owner = false
 handler.mods = false
 handler.premium = false
+handler.register = true
 handler.group = false
 handler.private = false
 
@@ -207,6 +204,7 @@ handler.botAdmin = false
 
 handler.fail = null
 handler.exp = 3
+
 
 module.exports = handler
 
@@ -218,23 +216,4 @@ function clockString(ms) {
   let m = isNaN(ms) ? '--' : Math.floor(ms / 60000) % 60
   let s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60
   return [h, m, s].map(v => v.toString().padStart(2, 0)).join(':')
-}
-
-// Ucapan Selamat
-function ucapan() {
-    const time = moment.tz('Asia/Jakarta').format('HH')
-    res = "Selamat dinihari"
-    if (time >= 4) {
-        res = "Sugeng Enjing 🌄🌤️"
-    }
-    if (time > 10) {
-        res = "Beduk🌞💫"
-    }
-    if (time >= 15) {
-        res = "Sugeng Sonten🌝✨"
-    }
-    if (time >= 18) {
-        res = "Wengi🌃🌚"
-    }
-    return res
 }

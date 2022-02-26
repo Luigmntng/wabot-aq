@@ -11,8 +11,9 @@ let handler = async(m, { conn }) => {
   let stiker = await sticker(null, result, global.packname, global.author)
   if (stiker) return conn.sendMessage(m.chat, stiker, MessageType.sticker, {
     quoted: m
-  })
-  throw stiker.toString()
+    })
+ } catch (e) {
+  }
 }
 handler.help = ['nsfwgift']
 handler.tags = ['premium']

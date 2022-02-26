@@ -58,8 +58,8 @@ Inventory *${name.vnmae || name.notify || name.name || ('+' + name.jid.split`@`[
 🏷️Title: *${title ? '' : 'Tidak ada'}*\n
 ❤️Health: *${healt}*
 💳Role: *${role}*
-🥋Baju batik: *${armor == 0 ? 'Tidak Punya' : '' || armor == 1 ? 'Leather Armor' : '' || armor == 2 ? 'Iron Armor' : '' || armor == 3 ? 'Gold Armor' : '' || armor == 4 ? 'Diamond Armor' : '' || armor == 5 ? 'Netherite Armor' : ''}*\n
-⛏️Pickaxe: *${pickaxe == 0 ? 'Tidak Punya' : '' || pickaxe == 1 ? 'Stone Pickaxe' : '' || pickaxe == 2 ? 'Golden Pickaxe' : '' || pickaxe == 3 ? 'Iron Pickaxe' : '' || armor == 4 ? 'Diamond Pickaxe' : '' || armor == 5 ? 'Netherite Pickaxe' : ''}*
+🥋Baju batik: *${Bajubatik == 0 ? 'Tidak Punya' : '' || Bajubatik == 1 ? 'Leather Bajubatik' : '' || Bajubatik == 2 ? 'Iron Bajubatik' : '' || Bajubatik == 3 ? 'Gold Bajubatik' : '' || Bajubatik == 4 ? 'Diamond Bajubatik' : '' || Bajubatik == 5 ? 'Netherite Bajubatik' : ''}*\n
+⛏️Pickaxe: *${pickaxe == 0 ? 'Tidak Punya' : '' || pickaxe == 1 ? 'Stone Pickaxe' : '' || pickaxe == 2 ? 'Golden Pickaxe' : '' || pickaxe == 3 ? 'Iron Pickaxe' : '' || Bajubatik == 4 ? 'Diamond Pickaxe' : '' || Bajubatik == 5 ? 'Netherite Pickaxe' : ''}*
 ⛏️Durability: *${pdurability}*
 🎣Fishing Rod: *${fishingrod == 0 ? 'Tidak Punya' : '' || fishingrod == 1 ? 'Pancingan Bambu' : '' || fishingrod == 2 ? 'Pancingan Biasa' : '' || fishingrod == 3 ? 'Pancingan Besi' : '' || fishingrod == 4 ? 'Pancingan Emas' : '' || fishingrod == 5 ? 'Jaring Ikan' : ''}*
 🎣Durability: *${fdurability}*\n

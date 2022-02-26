@@ -2,10 +2,10 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
   if (!text) throw `Contoh: ${usedPrefix + command} minecraft`
   let res = await pinterest(text)
   let pint = res[Math.floor(Math.random() * res.length)]
-  conn.sendButtonImg(m.chat, pint, '', `
+  conn.sendFile(m.chat, pint, '', `
 *Hasil pencarian*
 ${text}
-`.trim(), footer, 'Mksih Bot', ${usedPrefix + command} ${text}`, m)
+`.trim(), m)
 }
 handler.help = ['pinterest <keyword>']
 handler.tags = ['internet']

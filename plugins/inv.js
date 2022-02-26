@@ -37,7 +37,7 @@ let handler = async (m, { conn, usedPrefix }) => {
     let sortedmoney = Object.entries(global.DATABASE.data.users).sort((a, b) => b[1].money - a[1].money)
     let sortedlevel = Object.entries(global.DATABASE.data.users).sort((a, b) => b[1].level - a[1].level)
     let sorteddiamond = Object.entries(global.DATABASE.data.users).sort((a, b) => b[1].diamond - a[1].diamond)
-    let sortedpotion = Object.entries(global.DATABASE.data.users).sort((a, b) => b[1].potion - a[1].potion)
+    let sortedjamu = Object.entries(global.DATABASE.data.users).sort((a, b) => b[1].jamu - a[1].jamu)
     let sortedsampah = Object.entries(global.DATABASE.data.users).sort((a, b) => b[1].sampah - a[1].sampah)
     let sortedcommon = Object.entries(global.DATABASE.data.users).sort((a, b) => b[1].common - a[1].common)
     let sorteduncommon = Object.entries(global.DATABASE.data.users).sort((a, b) => b[1].uncommon - a[1].uncommon)
@@ -45,7 +45,7 @@ let handler = async (m, { conn, usedPrefix }) => {
     let sortedlegendary = Object.entries(global.DATABASE.data.users).sort((a, b) => b[1].legendary - a[1].legendary)
     let usersmoney = sortedmoney.map(v => v[0])
     let usersdiamond = sorteddiamond.map(v => v[0])
-    let userspotion = sortedpotion.map(v => v[0])
+    let usersjamu = sortedjamu.map(v => v[0])
     let userssampah = sortedsampah.map(v => v[0])
     let userslevel = sortedlevel.map(v => v[0])
     let userscommon = sortedcommon.map(v => v[0])
@@ -71,10 +71,10 @@ Inventory *${name.vnmae || name.notify || name.name || ('+' + name.jid.split`@`[
 💎Diamond: *${diamond}*
 🪨Batu: *${batu}*
 ⛓️Iron: *${iron}*
-🧃Potion: *${potion}*
+🧃jamu: *${jamu}*
 🗑️Sampah: *${sampah}*
 🍖Makanan Pet: *${makananpet}*
-Total inv: *${diamond + potion + sampah + makananpet}* item\n
+Total inv: *${diamond + jamu + sampah + makananpet}* item\n
 *Crate*
 📦Common: *${common}*
 📦Uncommon: *${uncommon}*
@@ -104,7 +104,7 @@ ${readMore}
 1.Top level *${userslevel.indexOf(who) + 1}* dari *${userslevel.length}*
 2.Top Money *${usersmoney.indexOf(who) + 1}* dari *${usersmoney.length}*
 3.Top Diamond *${usersdiamond.indexOf(who) + 1}* dari *${usersdiamond.length}*
-4.Top Potion *${userspotion.indexOf(who) + 1}* dari *${userspotion.length}*
+4.Top jamu *${usersjamu.indexOf(who) + 1}* dari *${usersjamu.length}*
 5.Top Common *${userscommon.indexOf(who) + 1}* dari *${userscommon.length}*
 6.Top Uncommon *${usersuncommon.indexOf(who) + 1}* dari *${usersuncommon.length}*
 7.Top Mythic *${usersmythic.indexOf(who) + 1}* dari *${usersmythic.length}*

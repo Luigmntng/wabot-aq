@@ -34,7 +34,7 @@ Hai Kak @${m.sender.replace(/@.+/, '')} 👋\nNih Kak Kontak Owner Saya Kalo Mau
 conn.sendMessage(m.chat, buttonsMessage, 'buttonsMessage', { contextInfo: { mentionedJid: [m.sender]}})
 }
 handler.help = ['owner', 'creator']
-handler.tags = ['info']
+handler.tags = ['main']
 
 handler.command = /^(owner|creator)$/i
 

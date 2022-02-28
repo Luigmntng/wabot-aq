@@ -21,7 +21,7 @@ let res = global.API('https://hardianto.xyz', '/api/rankcard', {
     level: level,
     logorank: await conn.getProfilePicture(m.chat).catch(_ => '')
   })
-await conn.sendButtonLoc(m.chat, await (await fetch(test.jpg)).buffer(), `
+await conn.sendButtonLoc(m.chat, await (await fetch(res)).buffer(), `
 *👾 Your Profile:*
 *👤 Name:* ${nama}
 *⚜️ Rank:* ${role}
@@ -38,4 +38,3 @@ handler.register = true
 handler.fail = null
 
 module.exports = handler
-

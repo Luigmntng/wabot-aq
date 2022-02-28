@@ -27,7 +27,7 @@ await conn.sendButtonLoc(m.chat, await (await fetch(res)).buffer(), `
 *⚜️ Rank:* ${role}
 *🔰 Level:* ${level}
 *🔗 Exp :* ${exp} --> ${max}
-`.trim(), watermark, 'Back', `.menu`)
+`.trim(), footer, 'Back', `.menu`)
 } 
     
     }

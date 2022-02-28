@@ -29,6 +29,7 @@ global.APIs = { // API Prefix
   nrtm: 'https://nurutomo.herokuapp.com',
   xteam: 'https://api.xteam.xyz',
   hardianto: 'https://hardianto.xyz',
+  lolhum: 'https://api.lolhuman.xyz',
   zahir: 'https://zahirr-web.herokuapp.com',
   zeks: 'https://api.zeks.xyz',
   pencarikode: 'https://pencarikode.xyz',
@@ -39,6 +40,7 @@ global.APIKeys = { // APIKey Here
   'https://api.xteam.xyz': '9db5a5373433c015',
   'https://zahirr-web.herokuapp.com': 'zahirgans',
   'https://hardianto.xyz': 'hardianto',
+  'https://api.lolhuman.xyz': 'rey2k21',
   'https://api.zeks.xyz': 'apivinz',
   'https://pencarikode.xyz': 'pais',
   'https://leyscoders-api.herokuapp.com': 'dappakntlll'

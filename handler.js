@@ -33,165 +33,35 @@ this.updatePresence(m.chat, Presence.recording)
         let user = global.db.data.users[m.sender]
         if (typeof user !== 'object') global.db.data.users[m.sender] = {}
         if (user) {
-          if (!isNumber(user.healt)) user.healt = 0
-            if (!isNumber(user.level)) user.level = 0
-            if (!isNumber(user.exp)) user.exp = 0
-            if (!isNumber(user.title)) user.title = ''
-            if (!isNumber(user.limit)) user.limit = 5
-            if (!isNumber(user.lastclaim)) user.lastclaim = 0
-            if (!isNumber(user.money)) user.money = 0
-            
-            if (!isNumber(user.diamond)) user.diamond = 0
-            if (!isNumber(user.iron)) user.iron = 0
-
-            if (!isNumber(user.common)) user.common = 0
-            if (!isNumber(user.uncommon)) user.uncommon = 0
-            if (!isNumber(user.mythic)) user.mythic = 0
-            if (!isNumber(user.legendary)) user.legendary = 0
-            if (!isNumber(user.pet)) user.pet = 0
-        
-            if (!isNumber(user.jamu)) user.jamu = 0
-            if (!isNumber(user.sampah)) user.sampah = 0
-            if (!isNumber(user.bajubatik)) user.bajubatik = 0
-            
-            if (!isNumber(user.kucing)) user.kucing = 0
-            if (!isNumber(user.kucinglastclaim)) user.kucinglastclaim = 0
-            if (!isNumber(user.kuda)) user.kuda = 0
-            if (!isNumber(user.kudalastclaim)) user.kudalastclaim = 0
-            if (!isNumber(user.rubah)) user.rubah = 0
-            if (!isNumber(user.rubahlastclaim)) user.rubahlastclaim = 0
-            if (!isNumber(user.anjing)) user.anjing = 0
-            if (!isNumber(user.anjinglastclaim)) user.anjinglastclaim = 0
-
-            if (!'banned' in user) user.banned = false
-            if (!isNumber(user.warn)) user.warn = 0
-
-            if (!isNumber(user.afk)) user.afk = -1
-            if (!'afkReason' in user) user.afkReason = ''
-        
-            if (!isNumber(user.anakkucing)) user.anakkucing = 0
-            if (!isNumber(user.anakkuda)) user.anakkuda = 0
-            if (!isNumber(user.anakrubah)) user.anakrubah = 0
-            if (!isNumber(user.anakanjing)) user.anakanjing = 0
-            if (!isNumber(user.makananpet)) user.makananpet = 0
-
-            if (!isNumber(user.antispam)) user.antispam = 0
-            if (!isNumber(user.antispamlastclaim)) user.antispamlastclaim = 0
-
-            if (!isNumber(user.kayu)) user.kayu = 0
-            if (!isNumber(user.batu)) user.batu = 0
-            if (!isNumber(user.string)) user.string = 0
-            if (!isNumber(user.Sapuemak)) user.Sapuemak = 0
-            if (!isNumber(user.Sapuemakdurability)) user.Sapuemakdurability = 0
-            if (!isNumber(user.pickaxe)) user.pickaxe = 0
-            if (!isNumber(user.pickaxedurability)) user.pickaxedurability = 0
-            if (!isNumber(user.fishingrod)) user.fishingrod = 0
-            if (!isNumber(user.fishingroddurability)) user.fishingroddurability = 0
-            
-            if (!isNumber(user.paus)) user.paus = 0
-            if (!isNumber(user.kepiting)) user.kepiting = 0
-            if (!isNumber(user.gurita)) user.gurita = 0
-            if (!isNumber(user.cumi)) user.cumi= 0
-            if (!isNumber(user.buntal)) user.buntal = 0
-            if (!isNumber(user.dory)) user.dory = 0
-            if (!isNumber(user.lumba)) user.lumba = 0
-            if (!isNumber(user.lobster)) user.lobster = 0
-            if (!isNumber(user.hiu)) user.hiu = 0
-            if (!isNumber(user.udang)) user.udang = 0
-            if (!isNumber(user.ikan)) user.ikan = 0
-            if (!isNumber(user.orca)) user.orca = 0
-
-            if (!isNumber(user.lastadventure)) user.lastadventure = 0
-            if (!isNumber(user.lastfishing)) user.lastfishing = 0
-            if (!isNumber(user.lastdungeon)) user.lastdungeon = 0
-            if (!isNumber(user.lastduel)) user.lastduel = 0
-            if (!isNumber(user.lastmining)) user.lastmining = 0
-            if (!isNumber(user.lasthunt)) user.lasthunt = 0
-            if (!isNumber(user.lastweekly)) user.lastweekly = 0
-            if (!isNumber(user.lastmonthly)) user.lastmontly = 0
-            if (!('registered' in user)) user.registered = false
-            if (!user.registered) {
-                if (!('name' in user)) user.name = this.getName(m.sender)
-                if (!isNumber(user.age)) user.age = -1
-                if (!isNumber(user.serial)) user.serial
-                if (!isNumber(user.regTime)) user.regTime = -1
-            }
-            if (!('autolevelup' in user)) user.autolevelup = true
-            if (!('lastIstigfar' in user)) user.lastIstigfar = true
+          if (!isNumber(user.exp)) user.exp = 0
+          if (!isNumber(user.limit)) user.limit = 150
+          if (!isNumber(user.lastclaim)) user.lastclaim = 0
+          if (!('registered' in user)) user.registered = false
+          if (!user.registered) {
+            if (!('name' in user)) user.name = this.getName(m.sender)
+            if (!isNumber(user.age)) user.age = -1
+            if (!isNumber(user.regTime)) user.regTime = -1
+          }
+          if (!isNumber(user.afk)) user.afk = -1
+          if (!('afkReason' in user)) user.afkReason = ''
+          if (!('banned' in user)) user.banned = false
+          if (!isNumber(user.level)) user.level = 0
+          if (!user.role) user.role = 'Beginner'
+          if (!('autolevelup' in user)) user.autolevelup = false
         } else global.db.data.users[m.sender] = {
-            healt: 100,
-            level: 0,
-            title: '',
-            exp: 0,
-            limit: 5,
-            lastclaim: 0,
-            money: 0,
-            diamond: 0,
-            iron: 0,
-            common: 0,
-            uncommon: 0,
-            mythic: 0,
-            legendary: 0,
-            pet: 0,
-            jamu: 0,
-            sampah: 0,
-            bajubatik: 0,
-            kucing: 0,
-            as: 0,
-            paus: 0,
-            kepiting: 0,
-            gurita: 0,
-            cumi: 0,
-            buntal: 0,
-            dory: 0,
-            lumba: 0,
-            lobster: 0,
-            hiu: 0,
-            udang: 0,
-            ikan: 0,
-            orca: 0,
-            kucinglastclaim: 0,
-            kuda: 0,
-            kudalastclaim: 0,
-            rubah: 0,
-            rubahlastclaim: 0,
-            anjing: 0,
-            anjinglastclaim: 0,
-            banned: false,
-            warn: 0,
-            afk: -1,
-            afkReason: '',
-            anakkucing: 0,
-            anakkuda: 0,
-            anakrubah: 0,
-            anakanjing: 0,
-            makananpet: 0,
-            antispam: 0,
-            antispamlastclaim: 0,
-            kayu: 0,
-            batu: 0,
-            string: 0,
-            Sapuemak: 0,
-            Sapuemakdurability: 0,
-            pickaxe: 0,
-            pickaxedurability: 0,
-            fishingrod: 0,
-            fishingroddurability: 0,
-            lastadventure: 0,
-            lastfishing: 0,
-            lastdungeon: 0,
-            lastduel: 0,
-            lastmining: 0,
-            lasthunt: 0,
-            lastweekly: 0,
-            lastmonthly: 0,
-            registered: false,
-            name: this.getName(m.sender),
-            age: -1,
-            serial: serial,
-            regTime: -1,
-            autolevelup: true,
-            lastIstigfar: 0,
+          exp: 0,
+          limit: 150,
+          lastclaim: 0,
+          registered: false,
+          name: this.getName(m.sender),
+          age: -1,
+          regTime: -1,
+          afk: -1,
+          afkReason: '',
+          banned: false,
+          level: 0,
+          role: 'Beginner',
+          autolevelup: false,
         }
 
         let chat = global.db.data.chats[m.chat]
@@ -467,18 +337,29 @@ this.updatePresence(m.chat, Presence.recording)
         if (chat.welcome) {
           let groupMetadata = await this.groupMetadata(jid)
           for (let user of participants) {
+            if (user.includes(this.user.jid)) return // biar ngga nyambut diri sendiri, kalo simulasi harus tag yang lain
             let pp = './src/avatar_contact.png'
             try {
               pp = await this.getProfilePicture(user)
             } catch (e) {
             } finally {
-              text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!').replace('@subject', this.getName(jid)).replace('@desc', groupMetadata.desc) :
-                (chat.sBye || this.bye || conn.bye || 'Bye, @user!')).replace('@user', '@' + user.split('@')[0])
-              this.sendFile(jid, pp, 'pp.jpg', text, null, false, {
-                contextInfo: {
-                  mentionedJid: [user]
-                }
+              text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Beban Join @user 😡').replace('@subject', this.getName(jid)).replace('@desc', groupMetadata.desc ? String.fromCharCode(8206).repeat(4001) + groupMetadata.desc : '') :
+                (chat.sBye || this.bye || conn.bye || 'yeee Beban left @user 🥳')).replace(/@user/g, '@' + user.split('@')[0])
+              let wel = API('https://hardianto.xyz', '/api/welcome3', {
+                profile: pp,
+                name: this.getName(user),
+                bg: 'https://telegra.ph/file/4b90043328ec4825c0e71.jpg',
+                namegb: this.getName(jid),
+                member: groupMetadata.participants.length
               })
+              let lea = API('hardianto', '/api/goodbye3', {
+                profile: pp,
+                name: this.getName(user),
+                bg: 'https://telegra.ph/file/4b90043328ec4825c0e71.jpg',
+                namegb: this.getName(jid),
+                member: groupMetadata.participants.length
+              })
+              await this.sendButtonLoc(jid, action === 'add' ? wel : lea, text, 'CecakBotz', action === 'add' ? 'Pergi lu beban' : 'Alhamduillah', 'tes')
             }
           }
         }

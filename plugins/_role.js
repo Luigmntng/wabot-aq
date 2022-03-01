@@ -2,15 +2,15 @@ const roles = {
   /*
   'Role Name': <Minimal Level To Obtain this Role>
   */
-  'Beginner': 0,
-  'Kitten Town': 10,
-  'Black Woods': 20,
-  'Farmount': 30,
-  'Rosenvale': 40,
-  'Amberhill': 50,
-  'Master Fap': 60,
-  'Master Woods': 80,
-  'Legend': 90
+  'Wibu abnormal': 0,
+  'Wibu sangean': 10,
+  'OmOm/TanteTante Pedo': 20,
+  'Kaum tolol warga tiktod': 30,
+  'Pecinta Susu admin': 40,
+  'Pengocok handal': 50,
+  'The king Of bandar Bkp': 60,
+  'Master Bandar doujin': 80,
+  'Orang yg abnormal': 90
 }
 
 module.exports = {

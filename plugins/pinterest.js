@@ -2,7 +2,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
   if (!text) throw `Contoh: ${usedPrefix + command} minecraft`
   let res = await pinterest(text)
   let pint = res[Math.floor(Math.random() * res.length)]
-  conn.sendFile(m.chat, pint, '', `
+  await conn.sendButtonImg(m.chat, await (await fetch(pint)).buffer(), `
 *Hasil pencarian*
 ${text}
 `.trim(), m)

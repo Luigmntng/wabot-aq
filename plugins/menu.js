@@ -184,7 +184,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
     }
 }
 let fkon = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: '6282146092695@s.whatsapp.net' } : {}) }, message: { contactMessage: { displayName: `Relldev`, vcard: `BEGIN:VCARD\nVERSION:3.0\nN:;a,;;;\nFN: Rlxfly UwU\nitem1.TEL;waid=6282146092695:6282146092695\nitem1.X-ABLabel:Ponsel\nEND:VCARD`}}}
-conn.send3ButtonLoc(m.chat, await (await fetch(thumb1)).buffer() `Hi! Beban Im ${conn.user.name}\n\nHere my menu...`, text.trim(), footer, 'Click Here !!', '.owner', 'sumbangannya Om', '.donasi', 'CecakBotZ', '.ping', reply)
+conn.send3ButtonLoc(m.chat, thumb, `Hi! Beban Im ${conn.user.name}\n\nHere my menu...`, text.trim(), footer, 'Click Here !!', '.owner', 'sumbangannya Om', '.donasi', 'CecakBotZ', '.ping', reply)
   } catch (e) {
     conn.reply(m.chat, 'Maaf, menu sedang error', m)
     throw e
